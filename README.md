@@ -10,11 +10,15 @@ In addition you will need a recent version of PostgreSQL installed. The SQL fold
 
 ## Usage
 
-Run the main method in BookstoreClient in your IDE with the JDBC dependency included. The GUI should otherwise be quite easy
+Update the constants in BookstoreModel to match the URL, user id and password of your database. Run the main method in BookstoreClient in your IDE with the JDBC dependency included and the provided sql files already run in the PostgresSQL query tool. The GUI should otherwise be quite easy to follow.
 
 ## History
 
 Version 1 (2021-12-19) - Created
+
+## Issues
+
+At this point in time the functionalities for administrators to view reports and for customers to track their orders are not fully implemented. The GUI portions of these functionalities are implemented but the actual querying of the database has not been completed yet.
 
 ## Credits
 
