@@ -1,4 +1,4 @@
-# COMP3005 BookstoreGUI Project
+a# COMP3005 BookstoreGUI Project
 
 The BookstoreGUI Project involves creating a graphical user interface for a bookstore with which administrators and clients can interact. It was build using Java using a JDBC driver to communicate with a PostgreSQL database.
 
@@ -7,6 +7,8 @@ The BookstoreGUI Project involves creating a graphical user interface for a book
 Currently, it is recommended that this code be downloaded and opened with your IDE. This is because Maven has been difficult about including the PostgreSQL JDBC Driver dependency. The code can be downloaded by cloning the project or by downloading the provided jarfile. The provided jarfile includes both the source code and the corresponding compiled versions of the source code. The jar file manifest is correct as well, the issue is only with the JDBC driver dependency.
 
 In addition you will need a recent version of PostgreSQL installed. The SQL folder includes the DDL and inserts that are needed to create the database.
+
+The version of the PostgreSQL JDBC driver that was used is 42.3.1.
 
 ## Usage
 
