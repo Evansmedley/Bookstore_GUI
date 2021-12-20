@@ -6,7 +6,7 @@ import java.util.List;
 public class BookstoreModel {
 
     private static final String DB_USER_ID = "postgres";
-    private static final String DB_PASSWORD = "E$987ytr22";
+    private static final String DB_PASSWORD = "";
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/COMP3005";
 
     private List<BookstoreView> bookstoreViews;
