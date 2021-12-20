@@ -1,4 +1,4 @@
-a# COMP3005 BookstoreGUI Project
+## COMP3005 BookstoreGUI Project
 
 The BookstoreGUI Project involves creating a graphical user interface for a bookstore with which administrators and clients can interact. It was build using Java using a JDBC driver to communicate with a PostgreSQL database.
 
