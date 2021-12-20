@@ -4,9 +4,9 @@ public class Book {
     private final String genre;
     private final int number_of_pages;
     private final double price;
-    private int stock;
+    private final int stock;
     private final int percentage_of_sales;
-    private  int num_sold_prev_month;
+    private final int num_sold_prev_month;
     private final String author_email;
     private final String publisher_phone_number;
 
@@ -63,13 +63,6 @@ public class Book {
         return publisher_phone_number;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public void setNum_sold_prev_month(int num_sold_prev_month) {
-        this.num_sold_prev_month = num_sold_prev_month;
-    }
 
     @Override
     public String toString() {

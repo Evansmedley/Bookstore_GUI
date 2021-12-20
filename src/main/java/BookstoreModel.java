@@ -15,6 +15,8 @@ public class BookstoreModel {
     private int currentOrderNumber;
     private ArrayList<Book> currentSearchResults;
     private ArrayList<Book> currentCartContents;
+    private String recentSearchQuery;
+    private SearchCategory recentSearchCategory;
 
     public enum UserType {
         UNDECIDED(-1), CUSTOMER(0), ADMINISTRATOR(1);
@@ -44,6 +46,8 @@ public class BookstoreModel {
         this.currentSearchResults = new ArrayList<>();
         this.currentCartContents = new ArrayList<>();
         this.currentOrderNumber = 4;
+        this.recentSearchCategory = SearchCategory.TITLE;
+        this.recentSearchQuery = "";
     }
 
     public void addView(BookstoreView view) {
@@ -139,6 +143,8 @@ public class BookstoreModel {
 
     public void search(String searchText, SearchCategory searchCategory) {
         currentSearchResults = new ArrayList<>();
+        this.recentSearchCategory = searchCategory;
+        this.recentSearchQuery = searchText;
         String[] searchTerms = searchText.split(" ");
         ArrayList<ArrayList<Object>> result = null;
         for (String term : searchTerms) {
@@ -221,12 +227,11 @@ public class BookstoreModel {
                 updateDatabase("insert into books_ordered values ('" + book.getIsbn() + "', '" + currentOrderNumber + "', '1');");
             }
             updateDatabase("update book set stock = '" + (book.getStock() - 1) + "', num_sold_prev_month = '" + (book.getNum_sold_prev_month() + 1) + "' where ISBN = '" + book.getIsbn() + "';");
-            book.setStock(book.getStock() - 1);
-            book.setNum_sold_prev_month(book.getNum_sold_prev_month() - 1);
-            if (book.getStock() < 10) {
-                orderMore(book.getIsbn(), book.getStock());
+            if (book.getStock() - 1 < 10) {
+                orderMore(book.getIsbn(), book.getStock() - 1);
             }
         }
+        search(this.recentSearchQuery, this.recentSearchCategory);
         emptyCart();
     }
 

@@ -56,6 +56,9 @@ public class AddRemovePanel extends JPanel implements BookstoreView {
 
     @Override
     public void update(BookstoreEvent e) {
-
+        for (int i = 0; i < jTextFields.length; i++) {
+            jTextFields[i].setText("");
+            attributeValues[i] = "";
+        }
     }
 }

@@ -22,9 +22,6 @@ public abstract class BookListPanel extends JPanel implements BookstoreView {
         bookListModel.addElement(book);
     }
 
-    public void removeBook(Book book) {
-        if (bookListModel.contains(book)) {
-            bookListModel.removeElement(book);
-        }
-    }
+    @Override
+    public abstract void update(BookstoreEvent e);
 }
